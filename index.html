@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mandelbrot</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+        .body{
+            font-size:20px;
+            }
+        .side{
+            position:absolute;
+            right:700px;
+        }
+    </style>
+    </head>
+    <body>
+        canvasのサイズ<input type="range" min="100" max="1400" value="700" onchange="let pre=canvas.width; canvas.width=this.value; canvas.height=this.value; offset=[offset[0]*(this.value/pre),offset[1]*(this.value/pre)]; draw(offset[0],offset[1]); document.getElementById('ranget1').innerHTML=this.value" /><t id="ranget1">700</t>px<hr><input type="button" value="拡大" onclick="scale=scale*2; draw(offset[0],offset[1]);"><input type="button" value="縮小" onclick="scale=scale*0.5; draw(offset[0],offset[1]);"><hr>粗さ<input type="range" onchange="dotization=this.value; draw(offset[0],offset[1])" value="0.5" step="0.5" min="0" max="2"><hr>
+        <canvas class="canvas" width="700" height="700"></canvas>
+        <t id="res"></t>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
